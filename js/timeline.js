@@ -35,7 +35,6 @@ var Timeline = function ($htmlObj, options) {
         dateDisplay: function (date) { 
             return date.getDate() + " " + TIMELINE_PREFERENCES.monthNames[date.getMonth()] + " " + date.getFullYear(); 
         },
-        bodyHtml: false,
         onClick: function (event) { },
         onRenerDone: function () { },
         vertical: true,
