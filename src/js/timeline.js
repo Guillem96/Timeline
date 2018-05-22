@@ -11,13 +11,13 @@ var TIMELINE_PREFERENCES = {
         time: new Date(),
         body: "Event body",
         icon: "fa fa-question",
-        type: "danger"
+        type: "info"
     }
 };
 
 var Timeline = function ($htmlObj, options) {
     var defaultOptions = {
-        eventArray : [TIMELINE_PREFERENCES.defaultEvent, TIMELINE_PREFERENCES.defaultEvent, TIMELINE_PREFERENCES.defaultEvent, TIMELINE_PREFERENCES.defaultEvent],
+        eventArray : [],
         eventsTemplate :
             '<div class="timeline-badge"><i class="icon"></i></div>' + 
             '<div class="timeline-panel">' +
@@ -74,8 +74,8 @@ Timeline.prototype.render = function () {
 
         var newEvent = $(this.eventTemplate);
 
-        $(newEvent[0]).addClass(this.eventArray[i].type);
-        $(newEvent[1]).addClass(this.eventArray[i].type);
+        $(newEvent[0]).addClass(this.eventArray[i].type || 'info');
+        $(newEvent[1]).addClass(this.eventArray[i].type || 'info');
 
         for (var property in this.eventArray[i]) {
             if (this.eventArray[i].hasOwnProperty(property)) {

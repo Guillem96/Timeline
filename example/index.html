@@ -29,11 +29,42 @@
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-<script src="js/timeline.js" ></script>
+<script src="../src/js/timeline.js" ></script>
 <script>
     $(document).ready(function () {
-        var timeline = new Timeline($(".here-goes-the-timeline"), {})
+        var timeline = new Timeline($(".here-goes-the-timeline"), {
+            eventArray : [
+            {
+                title: "Coffee time",
+                time: new Date("2015-03-25T8:00:00Z"),
+                icon: "fa fa-coffee",
+            },
+            {
+                title: "University",
+                time: new Date("2015-03-25T9:00:00Z"),
+                icon: "fa fa-book",
 
+            },
+            {
+                title: "Launch time",
+                time: new Date("2015-03-25T12:00:00Z"),
+                icon: "fa fa-utensils",
+                type: "warning"
+
+            },
+            {
+                title: "Play Overwatch",
+                time: new Date("2015-03-25T17:00:00Z"),
+                icon: "fa fa-gamepad",
+                type: "success"
+            },
+            ],
+            dateDisplay: function (date) {
+                return "Day " + date.getDate() + ", " + 
+                    (String(date.getHours()).length === 1 ? "0" + date.getHours() : date.getHours()) + ":" +
+                    (String(date.getMinutes()).length === 1 ? "0" + date.getMinutes() : date.getMinutes());
+            }
+        });
     });
 </script>
 </html>
