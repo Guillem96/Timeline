@@ -105,4 +105,4 @@ $(document).ready(function () {
 #### Output
 The output which corresponds to the previous code, using the following [stylesheet](/example/css/style.css) is:
 
-[example-output](/example/output/example.png)
+![example-output](/example/output/example.png)
