@@ -82,9 +82,9 @@ Timeline.prototype.render = function () {
                 if(property == 'icon') {
                     newEvent.find('.icon').addClass(this.eventArray[i][property]);
                 } else if (property === 'time') {
-                    newEvent.find('.time').text(this.dateDisplay(this.eventArray[i].time));
+                    newEvent.find('.time').html(this.dateDisplay(this.eventArray[i].time));
                 } else {
-                    newEvent.find('.' + property).text(this.eventArray[i][property])
+                    newEvent.find('.' + property).html(this.eventArray[i][property])
                 }
             }
         }
