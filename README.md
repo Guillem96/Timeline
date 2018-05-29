@@ -106,3 +106,4 @@ $(document).ready(function () {
 The output which corresponds to the previous code, using the following [stylesheet](/example/css/style.css) is:
 
 ![example-output](/example/output/example.png)
+
