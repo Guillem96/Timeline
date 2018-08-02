@@ -32,7 +32,7 @@
 <script src="../src/js/timeline.js" ></script>
 <script>
     $(document).ready(function () {
-        var timeline = new Timeline($(".here-goes-the-timeline"), {
+        timeline.create($(".here-goes-the-timeline"), {
             eventArray : [
             {
                 title: "Coffee time",
@@ -63,6 +63,10 @@
                 return "Day " + date.getDate() + ", " + 
                     (String(date.getHours()).length === 1 ? "0" + date.getHours() : date.getHours()) + ":" +
                     (String(date.getMinutes()).length === 1 ? "0" + date.getMinutes() : date.getMinutes());
+            },
+            onRenerDone: function () { console.log("Render done!!!"); },
+            onClick: function (event) {
+              alert("You have clicked on " + event.title);
             }
         });
     });
